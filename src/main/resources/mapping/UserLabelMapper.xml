@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="www.studentcourse.tk.mapper.UserLabelMapper" >
+  <resultMap id="BaseResultMap" type="www.studentcourse.tk.model.UserLabel" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="label_id" property="labelId" jdbcType="VARCHAR" />
+    <result column="flag" property="flag" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="user_label_id" property="userLabelId" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="www.studentcourse.tk.model.UserLabel" >
+    insert into user_label (id, user_id, label_id, 
+      flag, create_time, update_time, 
+      user_label_id)
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{labelId,jdbcType=VARCHAR}, 
+      #{flag,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{userLabelId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="www.studentcourse.tk.model.UserLabel" >
+    insert into user_label
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="labelId != null" >
+        label_id,
+      </if>
+      <if test="flag != null" >
+        flag,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="userLabelId != null" >
+        user_label_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="labelId != null" >
+        #{labelId,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userLabelId != null" >
+        #{userLabelId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
