@@ -5,6 +5,8 @@ import java.util.Date;
 public class Label {
     private String labelId;
 
+    private String userId;
+
     private String labelType;
 
     private String labelTypeName;
@@ -19,14 +21,20 @@ public class Label {
 
     private Date updateTime;
 
-    private String userId;
-
     public String getLabelId() {
         return labelId;
     }
 
     public void setLabelId(String labelId) {
         this.labelId = labelId == null ? null : labelId.trim();
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
     }
 
     public String getLabelType() {
@@ -83,13 +91,5 @@ public class Label {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
     }
 }
