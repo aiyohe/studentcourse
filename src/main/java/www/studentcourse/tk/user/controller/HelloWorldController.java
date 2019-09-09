@@ -1,11 +1,8 @@
-package www.studentcourse.tk.controller;
+package www.studentcourse.tk.user.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @Author: Mr.Zhang
@@ -15,9 +12,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 public class HelloWorldController {
-    @ResponseBody
+   /* @ResponseBody
     @RequestMapping("/hello")
     public String hello(HttpServletRequest request, HttpServletResponse response){
-        return"Hello World 你好啊";
+        return"Hello World";
+    }*/
+    @RequestMapping("/helloTh")
+    public String helloThymeleal(ModelMap map){
+        map.addAttribute("message","这是什么情况，怎么没有改变内容");
+        return "/hello/hello";
     }
 }

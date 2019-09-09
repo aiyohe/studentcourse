@@ -1,11 +1,11 @@
-package www.studentcourse.tk.controller;
+package www.studentcourse.tk.user.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import www.studentcourse.tk.model.User;
-import www.studentcourse.tk.service.UserService;
+import www.studentcourse.tk.user.service.UserService;
 import www.studentcourse.tk.util.Constant;
 import www.studentcourse.tk.util.SequenUtil;
 

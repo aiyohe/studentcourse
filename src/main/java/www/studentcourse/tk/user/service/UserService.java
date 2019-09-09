@@ -1,4 +1,4 @@
-package www.studentcourse.tk.service;
+package www.studentcourse.tk.user.service;
 
 import www.studentcourse.tk.model.User;
 
