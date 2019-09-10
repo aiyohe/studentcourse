@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="www.studentcourse.tk.mapper.LabelMapper" >
+  <resultMap id="BaseResultMap" type="www.studentcourse.tk.model.Label" >
+    <result column="LABEL_ID" property="labelId" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="LABEL_TYPE" property="labelType" jdbcType="VARCHAR" />
+    <result column="LABEL_TYPE_NAME" property="labelTypeName" jdbcType="VARCHAR" />
+    <result column="PARENT_LABEL_TYPE" property="parentLabelType" jdbcType="VARCHAR" />
+    <result column="LABEL_NAME" property="labelName" jdbcType="VARCHAR" />
+    <result column="FLAG" property="flag" jdbcType="INTEGER" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="www.studentcourse.tk.model.Label" >
+    insert into LABEL (LABEL_ID, USER_ID, LABEL_TYPE, 
+      LABEL_TYPE_NAME, PARENT_LABEL_TYPE, LABEL_NAME, 
+      FLAG, CREATE_TIME, OP_TIME
+      )
+    values (#{labelId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{labelType,jdbcType=VARCHAR}, 
+      #{labelTypeName,jdbcType=VARCHAR}, #{parentLabelType,jdbcType=VARCHAR}, #{labelName,jdbcType=VARCHAR}, 
+      #{flag,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{opTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="www.studentcourse.tk.model.Label" >
+    insert into LABEL
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="labelId != null" >
+        LABEL_ID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="labelType != null" >
+        LABEL_TYPE,
+      </if>
+      <if test="labelTypeName != null" >
+        LABEL_TYPE_NAME,
+      </if>
+      <if test="parentLabelType != null" >
+        PARENT_LABEL_TYPE,
+      </if>
+      <if test="labelName != null" >
+        LABEL_NAME,
+      </if>
+      <if test="flag != null" >
+        FLAG,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="opTime != null" >
+        OP_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="labelId != null" >
+        #{labelId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="labelType != null" >
+        #{labelType,jdbcType=VARCHAR},
+      </if>
+      <if test="labelTypeName != null" >
+        #{labelTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentLabelType != null" >
+        #{parentLabelType,jdbcType=VARCHAR},
+      </if>
+      <if test="labelName != null" >
+        #{labelName,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="opTime != null" >
+        #{opTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
